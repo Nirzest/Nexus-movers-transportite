@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Logistics | Elite Transport & Relocations</title>
+  <meta name="description" content="Experience premier moving and transport services. Premium white-glove packing, climate control, and global logistics.">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- FontAwesome / SVG Icons helper -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B1F3A'/><path d='M30 35 L70 35 M30 50 L70 50 M30 65 L55 65' stroke='%23FF7A00' stroke-width='8' stroke-linecap='round'/></svg>">
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <div class="logo-icon">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div style="font-family: var(--font-heading); color: white;">NEXUS<span style="color: var(--color-orange);">MOVE</span></div>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container"></div>
+
+  <!-- FLOATING WHATSAPP CTA -->
+  <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-fab" aria-label="Connect via WhatsApp">
+    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.588 1.978 14.12 .953 11.5 .953c-5.438 0-9.862 4.373-9.866 9.8.001 1.942.511 3.841 1.48 5.568l-.98 3.58 3.676-.957c1.602.873 3.25 1.332 4.247 1.332z"/>
+    </svg>
+  </a>
+
+  <!-- GLOBAL HEADER & STICKY NAVIGATION -->
+  <header>
+    <div class="container nav-container">
+      <a href="#/" class="logo">
+        <div class="logo-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div class="logo-text">NEXUS<span>MOVE</span></div>
+      </a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#/" class="nav-link active">Home</a></li>
+          <li><a href="#/about" class="nav-link">About</a></li>
+          <li><a href="#/services" class="nav-link">Services</a></li>
+          <li><a href="#/pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#/tracking" class="nav-link">Tracking</a></li>
+          <li><a href="#/gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#/careers" class="nav-link">Careers</a></li>
+          <li><a href="#/contact" class="nav-link">Contact</a></li>
+          <li class="mobile-auth-item" id="mobile-signin-item"><a href="#/signin" class="nav-link">Sign In</a></li>
+          <li class="mobile-auth-item" id="mobile-profile-item" style="display: none;">
+            <a href="#" onclick="event.preventDefault();" class="nav-link" style="opacity: 0.8;"><span id="mobile-user-email"></span></a>
+          </li>
+          <li class="mobile-auth-item" id="mobile-admin-item" style="display: none;">
+            <a href="#/admin" class="nav-link" style="color: var(--color-orange);">Admin Panel</a>
+          </li>
+          <li class="mobile-auth-item" id="mobile-logout-item" style="display: none;">
+            <a href="#/logout" id="mobile-logout-btn-link" class="nav-link" style="color: var(--color-orange);">Log Out</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta" id="header-auth-cta">
+        <a href="#/pricing" class="btn btn-primary btn-sm">Get a Quote</a>
+        <a href="#/signin" class="btn btn-secondary btn-sm" id="header-signin-btn">Sign In</a>
+        <div class="header-profile" id="header-profile" style="display: none; position: relative;">
+          <button class="profile-toggle-btn" id="profile-toggle-btn" aria-label="Toggle User Menu">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-right: 0.4rem; stroke-width: 2;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            </svg>
+            <span id="header-user-display-name">Profile</span>
+            <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-left: 0.4rem; transition: transform 0.2s ease; stroke-width: 3;" id="profile-arrow">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          
+          <div class="profile-dropdown-menu" id="profile-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 0.75rem; width: 220px; z-index: 1100; padding: 1.25rem;">
+            <div class="profile-dropdown-header" style="margin-bottom: 0.75rem;">
+              <span style="font-size: 0.7rem; color: var(--color-gray-dark); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block;">Authorized Session</span>
+              <div id="header-user-email" style="font-size: 0.85rem; font-weight: 600; color: var(--color-white); margin-top: 0.25rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></div>
+            </div>
+            <div style="border-top: 1px solid var(--glass-border-dark); margin-bottom: 0.75rem;"></div>
+            <a href="#/admin" class="btn btn-secondary btn-sm" id="header-admin-btn" style="width: 100%; font-size: 0.85rem; padding: 0.6rem 1rem; margin-bottom: 0.5rem; display: none;">Admin Panel</a>
+            <button class="btn btn-accent btn-sm" id="header-logout-btn" style="width: 100%; font-size: 0.85rem; padding: 0.6rem 1rem;">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-right: 0.4rem; stroke-width: 2.5;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+              </svg>
+              <span>Log Out</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SPA VIEWS CONTAINER -->
+  <main class="view-container">
+
+    <!-- ==================== VIEW: HOME ==================== -->
+    <div id="view-home" class="page-view active-view">
+      
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="container hero-layout">
+          <div class="hero-content">
+            <span class="badge badge-orange mb-4">Elite Relocation Services</span>
+            <h1 class="hero-title"><span class="gradient-text">Logistics Engineered</span> <br>With Pure Elegance</h1>
+            <p class="hero-desc">Redefining elite moving experiences through high-tech telemetry, white-glove carpentry, and custom climate-controlled transport vessels.</p>
+            <div class="hero-ctas">
+              <a href="#/pricing" class="btn btn-accent">Book Your Move</a>
+              <a href="#/tracking" class="btn btn-secondary">Track Shipment</a>
+            </div>
+            
+            <div class="hero-counters">
+              <div class="counter-item">
+                <div class="counter-value" data-target="50000" data-suffix="+">0</div>
+                <div class="counter-label">Moves Completed</div>
+              </div>
+              <div class="counter-item">
+                <div class="counter-value" data-target="99" data-suffix="%">0</div>
+                <div class="counter-label">Success Rate</div>
+              </div>
+              <div class="counter-item">
+                <div class="counter-value" data-target="20" data-suffix="+">0</div>
+                <div class="counter-label">Years of Honor</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="visual-canvas">
+              <div class="visual-ring ring-1"></div>
+              <div class="visual-ring ring-2"></div>
+              <div class="visual-ring ring-3"></div>
+              
+              <!-- Floating UI elements simulating movement -->
+              <div class="floating-element fe-1">
+                <div class="fe-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                <div class="fe-text">
+                  <h5>Cargo Telemetry</h5>
+                  <span>GPS: Active</span>
+                </div>
+              </div>
+
+              <div class="floating-element fe-2">
+                <div class="fe-icon orange"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+                <div class="fe-text">
+                  <h5>Valuables Insured</h5>
+                  <span>100% Value Guarantee</span>
+                </div>
+              </div>
+
+              <div class="floating-element fe-3">
+                <div class="fe-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                <div class="fe-text">
+                  <h5>On-Time Integrity</h5>
+                  <span>Downtime: 0ms</span>
+                </div>
+              </div>
+
+              <div class="visual-center">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="text-white" style="filter: drop-shadow(0 0 12px var(--color-royal-light));">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0zM13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10M13 16h2m-6 0h2m0 0h2m0 0h2m-1-4h3l3 3V16h-3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATISTICS HIGHLIGHTS -->
+      <section class="stats-section">
+        <div class="container stats-grid">
+          <div class="stat-card">
+            <div class="stat-num" data-target="50000" data-suffix="+">0</div>
+            <div class="stat-label">Successful Deliveries</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-target="20" data-suffix="+">0</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-target="150" data-suffix="+">0</div>
+            <div class="stat-label">Premium Vehicles</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-target="99" data-suffix="%">0</div>
+            <div class="stat-label">Customer Satisfaction</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES PREVIEW -->
+      <section class="services-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Our Capabilities</span>
+            <h2 class="section-title">Logistics Redefined For Connoisseurs</h2>
+            <p class="section-desc">From complex global freight routing to custom white-glove timber crating, explore our elite transport options.</p>
+          </div>
+          
+          <div class="services-container-grid services-grid">
+            <!-- Dynamically Injected from data.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE US -->
+      <section class="why-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Executive Trust</span>
+            <h2 class="section-title">Why Industry Leaders Select Us</h2>
+            <p class="section-desc">Our commitment is backed by real-time sensor technologies and high-end security protocols.</p>
+          </div>
+
+          <div class="why-grid">
+            <div class="glass-card why-card reveal">
+              <div class="why-icon">📡</div>
+              <h3>Live Telemetry Systems</h3>
+              <p>Monitor your cargo parameters including temperature, relative humidity, speed, and real-time coordinates.</p>
+            </div>
+            <div class="glass-card why-card reveal delay-100">
+              <div class="why-icon">🛡️</div>
+              <h3>Comprehensive Value Cover</h3>
+              <p>Complete replacement value coverage of your high-worth assets certified by professional appraisers.</p>
+            </div>
+            <div class="glass-card why-card reveal delay-200">
+              <div class="why-icon">🪵</div>
+              <h3>Specialist Timber Crating</h3>
+              <p>On-site carpentry division designs custom shock-absorbing timber casings tailored for fragile goods.</p>
+            </div>
+            <div class="glass-card why-card reveal">
+              <div class="why-icon">🚚</div>
+              <h3>Clean Energy Fleet</h3>
+              <p>Advanced fleet operating with quiet climate-controlled EV sprinter vans and clean biofuel trailers.</p>
+            </div>
+            <div class="glass-card why-card reveal delay-100">
+              <div class="why-icon">🕴️</div>
+              <h3>Certified Elite Movers</h3>
+              <p>Relocations coordinates handled solely by background-verified, extensively trained white-glove handlers.</p>
+            </div>
+            <div class="glass-card why-card reveal delay-200">
+              <div class="why-icon">📞</div>
+              <h3>24/7 Operations Desk</h3>
+              <p>Your dedicated logistics consultant stands by around the clock to resolve clearance or transport questions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS TIMELINE -->
+      <section class="timeline-section" style="background: var(--color-navy);">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Operation Standard</span>
+            <h2 class="section-title">The Path to Flawless Delivery</h2>
+            <p class="section-desc">Every step is engineered to minimize friction and ensure absolute security of your assets.</p>
+          </div>
+
+          <div class="process-timeline reveal">
+            <div class="timeline-grid">
+              <div class="timeline-step active" data-step="1">
+                <div class="step-number">01</div>
+                <h4 class="step-title">Quote Request</h4>
+                <p class="step-desc">Interactive inputs</p>
+              </div>
+              <div class="timeline-step" data-step="2">
+                <div class="step-number">02</div>
+                <h4 class="step-title">Precise Survey</h4>
+                <p class="step-desc">Engineering checks</p>
+              </div>
+              <div class="timeline-step" data-step="3">
+                <div class="step-number">03</div>
+                <h4 class="step-title">Elite Packing</h4>
+                <p class="step-desc">Custom timber cases</p>
+              </div>
+              <div class="timeline-step" data-step="4">
+                <div class="step-number">04</div>
+                <h4 class="step-title">Smart Transit</h4>
+                <p class="step-desc">Telemetry locked</p>
+              </div>
+              <div class="timeline-step" data-step="5">
+                <div class="step-number">05</div>
+                <h4 class="step-title">Assembly</h4>
+                <p class="step-desc">White-glove placement</p>
+              </div>
+              <div class="timeline-step" data-step="6">
+                <div class="step-number">06</div>
+                <h4 class="step-title">Sign-Off</h4>
+                <p class="step-desc">Quality audit</p>
+              </div>
+            </div>
+
+            <!-- Dynamic step details card -->
+            <div class="step-details-box mt-8">
+              <div class="details-content">
+                <h3 id="process-details-title">Request a Custom Quote</h3>
+                <p id="process-details-text">Submit details about your relocation size, origin, and destination coordinates. Our pricing calculator will provide a transparent initial estimate, which is reviewed by our logistics coordinator within 10 minutes.</p>
+                <a href="#/pricing" class="btn btn-accent">Try Estimate Calculator</a>
+              </div>
+              <div class="details-img-container">
+                <img id="process-details-img" src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?auto=format&fit=crop&q=80&w=400" alt="Process details illustration">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIAL CAROUSEL -->
+      <section class="testimonials-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Client Voices</span>
+            <h2 class="section-title">Endorsed By Elite Organizations</h2>
+            <p class="section-desc">Discover the experiences of gallery curators, private estate owners, and corporate partners.</p>
+          </div>
+
+          <div class="testimonial-wrapper reveal">
+            <div class="testimonial-slider">
+              <div class="testimonial-track" id="testimonial-slider-track">
+                <!-- Injected from JS -->
+              </div>
+            </div>
+
+            <div class="carousel-controls">
+              <button class="carousel-arrow" id="testimonial-arrow-left" aria-label="Previous Slide">←</button>
+              <div class="carousel-dots" id="testimonial-slider-dots"></div>
+              <button class="carousel-arrow" id="testimonial-arrow-right" aria-label="Next Slide">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIMULATED LIVE SHIPMENT TRACKER SUBSECTION -->
+      <section class="tracking-mini-section" style="background: var(--color-navy);">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Direct Telemetry</span>
+            <h2 class="section-title">Verify Shipment Coordinate States</h2>
+            <p class="section-desc">Gain instant visibility. Enter one of our live simulator IDs to verify transit tracking.</p>
+          </div>
+
+          <div class="glass-card tracking-card reveal">
+            <div class="text-center mb-4">
+              <span class="badge badge-royal">Demo IDs: NEXUS-7789, AERO-4412, OCEAN-9901</span>
+            </div>
+            <form id="shipment-tracker-form" class="tracking-input-group">
+              <input type="text" id="tracker-input-field" placeholder="Enter Telemetry ID (e.g. NEXUS-7789)" class="input-style" required>
+              <button type="submit" class="btn btn-primary">Locate Cargo</button>
+            </form>
+
+            <!-- Results structure (hidden by default) -->
+            <div id="tracking-result-box" class="tracking-result-box">
+              <div class="tracker-grid">
+                <div class="tracker-info-panel">
+                  <div class="status-headline">
+                    <h4>Shipment: <span id="track-id-disp">NEXUS-XXXX</span></h4>
+                    <span id="track-status-disp" class="badge">In-Transit</span>
+                  </div>
+
+                  <div class="progress-track-wrapper">
+                    <div class="progress-bar-bg">
+                      <div class="progress-bar-fill" id="tracker-fill-bar"></div>
+                    </div>
+                    <div class="progress-steps-nodes">
+                      <div class="node-dot" data-step="1"></div>
+                      <div class="node-dot" data-step="2"></div>
+                      <div class="node-dot" data-step="3"></div>
+                      <div class="node-dot" data-step="4"></div>
+                      <div class="node-dot" data-step="5"></div>
+                    </div>
+                    <div class="node-labels">
+                      <span>Crated</span>
+                      <span>Dispatched</span>
+                      <span>Sorting</span>
+                      <span>Local Hub</span>
+                      <span>Delivered</span>
+                    </div>
+                  </div>
+
+                  <div class="shipment-details-list">
+                    <div class="detail-node-item">
+                      <span>Client / Sender</span>
+                      <p id="track-sender">-</p>
+                    </div>
+                    <div class="detail-node-item">
+                      <span>Consignee / Recipient</span>
+                      <p id="track-recipient">-</p>
+                    </div>
+                    <div class="detail-node-item">
+                      <span>Cargo Origin</span>
+                      <p id="track-origin">-</p>
+                    </div>
+                    <div class="detail-node-item">
+                      <span>Cargo Destination</span>
+                      <p id="track-dest">-</p>
+                    </div>
+                    <div class="detail-node-item">
+                      <span>Telemetry Update</span>
+                      <p id="track-updated">-</p>
+                    </div>
+                    <div class="detail-node-item">
+                      <span>Current Position</span>
+                      <p id="track-loc">-</p>
+                    </div>
+                  </div>
+
+                  <!-- Telemetry metrics -->
+                  <div class="shipment-details-list">
+                    <div class="detail-node-item" style="border-color: rgba(37,99,235,0.25);">
+                      <span>Vessel Temp Sensor</span>
+                      <p id="track-temp" style="color: var(--color-royal-light);">-</p>
+                    </div>
+                    <div class="detail-node-item" style="border-color: rgba(255,122,0,0.25);">
+                      <span>Cabin Humidity Meter</span>
+                      <p id="track-humidity" style="color: var(--color-orange);">-</p>
+                    </div>
+                  </div>
+                  
+                  <div class="detail-node-item" style="grid-column: span 2; border-color: rgba(34,197,94,0.25);">
+                    <span>Estimated Time Arrival</span>
+                    <p id="track-eta" style="color: var(--color-green); font-size: 1.1rem; margin-top: 0.2rem;">-</p>
+                  </div>
+                </div>
+
+                <div class="tracker-sidebar">
+                  <h4 class="mb-4">Live Telemetry Map</h4>
+                  <!-- Vector blueprint map visualizer -->
+                  <div class="map-visual-container">
+                    <svg class="map-svg-grid" viewBox="0 0 800 250">
+                      <!-- Abstract tech network grids -->
+                      <line x1="50" y1="50" x2="750" y2="50" />
+                      <line x1="50" y1="125" x2="750" y2="125" />
+                      <line x1="50" y1="200" x2="750" y2="200" />
+                      <line x1="150" y1="20" x2="150" y2="230" />
+                      <line x1="300" y1="20" x2="300" y2="230" />
+                      <line x1="450" y1="20" x2="450" y2="230" />
+                      <line x1="600" y1="20" x2="600" y2="230" />
+                      
+                      <!-- Waveform blueprint paths -->
+                      <path d="M 50 150 Q 200 80, 380 160 T 750 100" stroke="rgba(37, 99, 235, 0.3)" stroke-width="2" stroke-dasharray="6,4"/>
+                      <path d="M 100 210 Q 250 180, 500 80 T 700 180" stroke="rgba(255, 122, 0, 0.15)" stroke-width="1.5"/>
+                    </svg>
+                    <!-- Glowing position indicator node -->
+                    <div class="map-glow-dot" id="tracker-map-dot"></div>
+                  </div>
+
+                  <h4 class="mt-8 mb-4">Tracking History Log</h4>
+                  <div class="history-timeline" id="track-history-list">
+                    <!-- Loaded dynamically -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ==================== VIEW: ABOUT US ==================== -->
+    <div id="view-about" class="page-view">
+      <section>
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">About NexusMove</span>
+            <h2 class="section-title">Architecting The Standards of Logistics</h2>
+            <p class="section-desc">For two decades, NexusMove has catered to elite corporations, private estates, and national museums.</p>
+          </div>
+
+          <div class="reveal mb-4">
+            <h3>The Legacy of Care</h3>
+            <p>Founded in 2006, NexusMove started with a singular focus: treating clients' possessions with the absolute respect they deserve. We rejected conventional moving methods, opting instead to employ professional engineers and museum coordinators to craft logistics workflows.</p>
+            <p>Today, our operations span across continents, utilizing high-security hydrogen vehicles, smart telemetry monitoring systems, and local climate storage hubs. Yet our core mission remains unchanged: delivering zero-downtime, elite transitions.</p>
+          </div>
+
+          <div class="section-header reveal mt-8">
+            <span class="section-tag">Our Leadership</span>
+            <h2 class="section-title">The Visionary Core</h2>
+            <p class="section-desc">Guiding global networks with modern logistics sciences.</p>
+          </div>
+
+          <div class="team-grid">
+            <div class="glass-card team-card reveal">
+              <div class="team-avatar-wrapper">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200" alt="CEO">
+              </div>
+              <h3>Maximilian Sterling</h3>
+              <span>Chief Executive Officer</span>
+              <p class="text-xs">Former VP of Intermodal Cargo at Maersk. 20+ years coordinating heavy freight.</p>
+            </div>
+            <div class="glass-card team-card reveal delay-100">
+              <div class="team-avatar-wrapper">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200" alt="COO">
+              </div>
+              <h3>Dr. Evelyn Vance</h3>
+              <span>VP of Operations</span>
+              <p class="text-xs">Ph.D. in Operations Research from MIT. Specialized in route optimization algorithms.</p>
+            </div>
+            <div class="glass-card team-card reveal delay-200">
+              <div class="team-avatar-wrapper">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200" alt="CISO">
+              </div>
+              <h3>Marcus Delgado</h3>
+              <span>Chief Security Officer</span>
+              <p class="text-xs">Former Cybersecurity Lead in Government Transit. Manages IoT tracking encryptions.</p>
+            </div>
+          </div>
+
+          <div class="section-header reveal mt-8">
+            <span class="section-tag">Quality Confirmed</span>
+            <h2 class="section-title">Certifications & Honors</h2>
+          </div>
+
+          <div class="badges-container reveal">
+            <div class="cert-badge-box">
+              <span class="cert-icon">📜</span>
+              <span class="cert-title">ISO 9001:2015</span>
+              <p style="font-size:0.75rem; color:var(--color-gray-dark);">Logistics Quality Management</p>
+            </div>
+            <div class="cert-badge-box">
+              <span class="cert-icon">🔒</span>
+              <span class="cert-title">FIDI FAIM Certified</span>
+              <p style="font-size:0.75rem; color:var(--color-gray-dark);">Global Packing Standards</p>
+            </div>
+            <div class="cert-badge-box">
+              <span class="cert-icon">🌍</span>
+              <span class="cert-title">ISO 14001:2015</span>
+              <p style="font-size:0.75rem; color:var(--color-gray-dark);">Carbon Offsetting Protocols</p>
+            </div>
+            <div class="cert-badge-box">
+              <span class="cert-icon">🏆</span>
+              <span class="cert-title">Logistics Award 2025</span>
+              <p style="font-size:0.75rem; color:var(--color-gray-dark);">Innovator of the Year</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: SERVICES ==================== -->
+    <div id="view-services" class="page-view">
+      <section>
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Complete Scope</span>
+            <h2 class="section-title">Bespoke Services For Every Relocation</h2>
+            <p class="section-desc">Our capabilities span residences, tech data servers, high-value art, vehicles, and global intermodal containers.</p>
+          </div>
+
+          <div class="services-container-grid services-grid">
+            <!-- Injected from data.js -->
+          </div>
+
+          <div class="glass-card mt-8 reveal text-center" style="background: radial-gradient(circle, rgba(255,122,0,0.05) 0%, transparent 80%);">
+            <h3 class="mb-4">Require a Tailored Corporate Contract?</h3>
+            <p class="mb-4" style="max-width: 600px; margin-left: auto; margin-right: auto;">Our enterprise logistics division structures dedicated custom routes, direct API inventory logs, and corporate rate contracts.</p>
+            <a href="#/contact" class="btn btn-accent">Discuss Enterprise Accounts</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: FLEET ==================== -->
+    <div id="view-fleet" class="page-view">
+      <section>
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Our Transport Fleet</span>
+            <h2 class="section-title">Propulsion Engineered For Protection</h2>
+            <p class="section-desc">Browse our fleet of electric sprinklers, hybrid rigid vehicles, and clean hydrogen heavy container carriers.</p>
+          </div>
+
+          <!-- Filters -->
+          <div class="filter-tabs reveal">
+            <button class="filter-btn active fleet-filter-btn" data-filter="All">All Vehicles</button>
+            <button class="filter-btn fleet-filter-btn" data-filter="Cargo Vans">Cargo Vans</button>
+            <button class="filter-btn fleet-filter-btn" data-filter="Mini Trucks">Mini Trucks</button>
+            <button class="filter-btn fleet-filter-btn" data-filter="Trucks">Rigid Trucks</button>
+            <button class="filter-btn fleet-filter-btn" data-filter="Container Vehicles">Containers</button>
+            <button class="filter-btn fleet-filter-btn" data-filter="Heavy Transport">Heavy Haulage</button>
+          </div>
+
+          <div class="fleet-grid" id="fleet-container-grid">
+            <!-- Injected from data.js -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: PRICING ==================== -->
+    <div id="view-pricing" class="page-view">
+      <section>
+        <div class="container pricing-layout">
+          
+          <!-- DYNAMIC CALCULATOR SECTION -->
+          <div class="calculator-card glass-card reveal">
+            <div class="section-header" style="margin-bottom: 2.5rem;">
+              <span class="section-tag">Instant Telemetry Estimate</span>
+              <h2 class="section-title" style="font-size: 2rem;">Relocation Estimator</h2>
+              <p class="section-desc" style="font-size: 0.95rem;">Configure your relocation criteria to check instant estimate rates.</p>
+            </div>
+
+            <div class="calc-grid">
+              <form class="calc-form" onsubmit="event.preventDefault();">
+                <div class="calc-form-group">
+                  <label for="calc-move-type">Relocation Stream</label>
+                  <select id="calc-move-type" class="input-style">
+                    <option value="residential">Residences Relocation</option>
+                    <option value="corporate">Corporate Relocation</option>
+                    <option value="international">Global / Intermodal Moving</option>
+                    <option value="auto">Auto Vehicle Transport</option>
+                  </select>
+                </div>
+
+                <div class="calc-form-group">
+                  <label id="calc-size-label" for="calc-size">Residence Size</label>
+                  <div class="slider-container">
+                    <input type="range" id="calc-size" min="1" max="10" value="2" class="slider-style">
+                    <span id="calc-size-value" class="slider-value">2 BHK</span>
+                  </div>
+                </div>
+
+                <div class="calc-form-group">
+                  <label for="calc-distance">Estimated Distance (km)</label>
+                  <div class="slider-container">
+                    <input type="range" id="calc-distance" min="10" max="3000" value="150" class="slider-style">
+                    <span id="calc-distance-value" class="slider-value">150 km</span>
+                  </div>
+                </div>
+
+                <div class="calc-form-group">
+                  <label>Addon Capabilities</label>
+                  <div class="checkbox-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="calc-pack" checked>
+                      <span>White-Glove Packing</span>
+                    </label>
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="calc-insure" checked>
+                      <span>Complete Asset Insurance</span>
+                    </label>
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="calc-store">
+                      <span>Climate Warehousing (30d)</span>
+                    </label>
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="calc-express">
+                      <span>Express Priority Dispatch</span>
+                    </label>
+                  </div>
+                </div>
+              </form>
+
+              <div class="calc-result-panel">
+                <div class="calc-estimate-label">Total Telemetry Rate</div>
+                <div class="calc-estimate-price" id="calc-estimate">$0</div>
+                
+                <ul class="calc-breakdown">
+                  <li>
+                    <span>Handling base:</span>
+                    <span class="val" id="breakdown-type">$0</span>
+                  </li>
+                  <li>
+                    <span>Transit distance cost:</span>
+                    <span class="val" id="breakdown-distance">$0</span>
+                  </li>
+                  <li>
+                    <span>Volume volume cost:</span>
+                    <span class="val" id="breakdown-volume">$0</span>
+                  </li>
+                  <li>
+                    <span>Selected Addons:</span>
+                    <span class="val" id="breakdown-addons">None</span>
+                  </li>
+                </ul>
+
+                <a href="#/contact" class="btn btn-accent" style="width: 100%;">Finalize & Book Move</a>
+                <p style="font-size:0.7rem; color:var(--color-gray-dark); margin-top: 1rem;">*Estimates are calculated live. Final pricing subject to site clearances and surveys.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- THREE PREMIUM PRICING CARDS -->
+          <div>
+            <div class="section-header reveal">
+              <span class="section-tag">Tier Models</span>
+              <h2 class="section-title">Configured Pricing Packages</h2>
+              <p class="section-desc">Select a preset package for your logistics stream.</p>
+            </div>
+
+            <div class="pricing-cards-grid">
+              <div class="glass-card pricing-card reveal">
+                <h3>Basic Move</h3>
+                <p class="plan-desc">Standard secure moving for residential flats and local deliveries.</p>
+                <div class="plan-price-box">
+                  <span class="plan-price">$750</span>
+                  <span class="plan-period">/ Flat Rate Base</span>
+                </div>
+                <ul class="plan-features">
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    2 Packers + Rigid EV Van
+                  </li>
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    Standard Bubble Protection Wrap
+                  </li>
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    Basic GPS Dispatch Tracking
+                  </li>
+                  <li style="opacity: 0.5; text-decoration: line-through;">
+                    Custom Wooden Art Crating
+                  </li>
+                </ul>
+                <a href="#/contact" class="btn btn-secondary">Select Plan</a>
+              </div>
+
+              <div class="glass-card pricing-card recommended reveal delay-100">
+                <h3>Professional Move</h3>
+                <p class="plan-desc">Elite residential moving and corporate setups with dedicated managers.</p>
+                <div class="plan-price-box">
+                  <span class="plan-price">$1,850</span>
+                  <span class="plan-period">/ Flat Rate Base</span>
+                </div>
+                <ul class="plan-features">
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    4 Certified Packers + Large Hybrid Truck
+                  </li>
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    Double-Walled Archival Packing
+                  </li>
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    Real-time Telemetry Dashboard Access
+                  </li>
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    Dedicated Logistics Manager
+                  </li>
+                  <li style="opacity: 0.5; text-decoration: line-through;">
+                    Art Crating & Climate Storage Vaults
+                  </li>
+                </ul>
+                <a href="#/contact" class="btn btn-accent">Select Plan</a>
+              </div>
+
+              <div class="glass-card pricing-card reveal delay-200">
+                <h3>Premium Relocation</h3>
+                <p class="plan-desc">White-glove museum-grade logistics. Art collections, high worth estates.</p>
+                <div class="plan-price-box">
+                  <span class="plan-price">$3,900</span>
+                  <span class="plan-period">/ Flat Rate Base</span>
+                </div>
+                <ul class="plan-features">
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    Specialist Craters Team + Climate Container
+                  </li>
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    Custom Timber Case Construction
+                  </li>
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    Full Sensor Telemetry (Temp/RH/Shock)
+                  </li>
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    30-day Free Climate Storage Vaults
+                  </li>
+                  <li>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    Multi-Million Dollar Cargo Cover
+                  </li>
+                </ul>
+                <a href="#/contact" class="btn btn-secondary">Select Plan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: TRACKING ==================== -->
+    <div id="view-tracking" class="page-view">
+      <section>
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Smart Dashboard</span>
+            <h2 class="section-title">Real-Time Telemetry Center</h2>
+            <p class="section-desc">Access real-time sensor streams mapping cargo variables, speeds, and ETA logistics.</p>
+          </div>
+
+          <div class="glass-card tracking-card reveal">
+            <div class="text-center mb-4">
+              <span class="badge badge-royal">Simulation IDs: NEXUS-7789, AERO-4412, OCEAN-9901</span>
+            </div>
+            
+            <form id="dashboard-tracker-form" class="tracking-input-group" onsubmit="event.preventDefault(); performTrackingSearch(document.getElementById('dash-tracker-input').value);">
+              <input type="text" id="dash-tracker-input" placeholder="Enter Cargo Telemetry ID (e.g. NEXUS-7789)" class="input-style" required>
+              <button type="submit" class="btn btn-primary">Establish Link</button>
+            </form>
+
+            <div style="font-size: 0.85rem; color: var(--color-gray-dark); margin-bottom: 2rem; line-height: 1.6;" class="text-center">
+              💡 <em>Note: Live telemetry simulator updates coordinates and temperature variables instantly to verify active hardware states on simulated vessels.</em>
+            </div>
+
+            <!-- Dashboard status result is driven by the global function in app.js using target elements inside view-home or view-tracking -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: GALLERY ==================== -->
+    <div id="view-gallery" class="page-view">
+      <section>
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Operations History</span>
+            <h2 class="section-title">Completed Projects Portfolio</h2>
+            <p class="section-desc">Browse through our photographic records of estate relocations, artwork installations, and factory rigging.</p>
+          </div>
+
+          <div class="gallery-masonry reveal">
+            <div class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=400" alt="Estate Move">
+              <div class="gallery-overlay">
+                <h4>Vance Estate relocation</h4>
+                <span>Residential</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=400" alt="Server Setup">
+              <div class="gallery-overlay">
+                <h4>InnovateTech Server Migration</h4>
+                <span>Corporate</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e01a?auto=format&fit=crop&q=80&w=400" alt="HQ Relocation">
+              <div class="gallery-overlay">
+                <h4>Apex Global Office Assembly</h4>
+                <span>Corporate</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=400" alt="Fine Art Pack">
+              <div class="gallery-overlay">
+                <h4>Sterling Gallery Art Transit</h4>
+                <span>White-Glove</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=400" alt="Lab Gear Move">
+              <div class="gallery-overlay">
+                <h4>BioLabs Center Rigging</h4>
+                <span>Industrial</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=400" alt="Mansion relocation">
+              <div class="gallery-overlay">
+                <h4>Oceanside Mansion setup</h4>
+                <span>Residential</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: TESTIMONIALS ==================== -->
+    <div id="view-testimonials" class="page-view">
+      <section>
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Client Reviews</span>
+            <h2 class="section-title">Endorsed By Elite Organizations</h2>
+            <p class="section-desc">Discover the experiences of gallery curators, private estate owners, and corporate partners.</p>
+          </div>
+
+          <!-- Renders similar content layout as home for clean flow -->
+          <div class="glass-card reveal" style="max-width:800px; margin: 0 auto 3rem auto; padding:3rem;">
+            <div class="testimonial-stars" style="color:var(--color-gold); text-align:center;">★★★★★</div>
+            <p style="font-size: 1.3rem; font-style: italic; text-align:center; color:white; margin: 1.5rem 0;" class="mb-4">
+              "We have worked with NexusMove for three key corporate transitions. Their zero-downtime commitment was not just marketing; they completed migrations seamlessly ahead of schedule. The server telemetry logs kept our tech team confident throughout."
+            </p>
+            <div style="display:flex; align-items:center; justify-content:center; gap: 1rem;">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=60&h=60" style="border-radius:50%; border: 2px solid var(--color-royal);" alt="User">
+              <div>
+                <h4 style="color:white; font-size:1rem;">Clarissa Sterling</h4>
+                <p style="font-size:0.8rem; color:var(--color-gray-dark);">COO, Capital Growth Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: BLOG ==================== -->
+    <div id="view-blog" class="page-view">
+      <section>
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Insights Hub</span>
+            <h2 class="section-title">Logistics & Technology Chronicle</h2>
+            <p class="section-desc">Deep dives into packaging engineering, supply-chain encryptions, and future operations.</p>
+          </div>
+
+          <div class="blog-grid" id="blog-container-grid">
+            <!-- Injected from data.js -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: CAREERS ==================== -->
+    <div id="view-careers" class="page-view">
+      <section>
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Join The Operations</span>
+            <h2 class="section-title">Open Career Opportunities</h2>
+            <p class="section-desc">We search for detail-oriented, qualified carpenters, logistics operators, and transit coordinators.</p>
+          </div>
+
+          <div id="careers-jobs-grid" class="jobs-list">
+            <!-- Injected from data.js -->
+          </div>
+
+          <!-- APPLICATION FORM -->
+          <div class="glass-card careers-apply-box reveal" id="careers-form-section">
+            <h3>Submit Your Dossier</h3>
+            <p>Apply for open streams. Complete credentials fields and attach professional logistics resumes.</p>
+            
+            <form id="job-apply-form">
+              <div class="form-row-2">
+                <div class="form-group-style">
+                  <label for="careers-name">Full Legal Name</label>
+                  <input type="text" id="careers-name" class="input-style" required placeholder="Johnathan Sterling">
+                </div>
+                <div class="form-group-style">
+                  <label for="careers-email">Email Address</label>
+                  <input type="email" id="careers-email" class="input-style" required placeholder="sterling@nexusmove.com">
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group-style">
+                  <label for="careers-phone">Phone Number</label>
+                  <input type="tel" id="careers-phone" class="input-style" required placeholder="+1 (555) 019-2834">
+                </div>
+                <div class="form-group-style">
+                  <label for="careers-selected-job">Selected Stream / Position</label>
+                  <input type="text" id="careers-selected-job" class="input-style" required placeholder="Select a job from list above" readonly>
+                </div>
+              </div>
+
+              <div class="form-group-style">
+                <label for="careers-cover">Dossier Cover Note</label>
+                <textarea id="careers-cover" class="textarea-style" required placeholder="Elaborate on your experience with white-glove packing, heavy rigging, or coordinate mapping..."></textarea>
+              </div>
+
+              <div class="form-group-style">
+                <label for="careers-resume">Attach Dossier Resume (PDF / Word)</label>
+                <input type="file" id="careers-resume" class="input-style" style="padding: 0.6rem 1rem;" required>
+              </div>
+
+              <div class="text-right">
+                <button type="submit" class="btn btn-accent">Submit Candidacy Dossier</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: CONTACT ==================== -->
+    <div id="view-contact" class="page-view">
+      <section>
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Direct Lines</span>
+            <h2 class="section-title">Connect With Our Operations</h2>
+            <p class="section-desc">Connect with our dedicated logistics consultants to structure custom moving blueprints.</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="glass-card contact-form-card reveal">
+              <h3 class="mb-4">Send Secure Inquiry</h3>
+              <form id="contact-message-form">
+                <div class="form-row-2">
+                  <div class="form-group-style">
+                    <label for="contact-name">Your Name</label>
+                    <input type="text" id="contact-name" class="input-style" placeholder="Arthur Vance" required>
+                  </div>
+                  <div class="form-group-style">
+                    <label for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" class="input-style" placeholder="vance@estate.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group-style">
+                  <label for="contact-subject">Inquiry Subject</label>
+                  <select id="contact-subject" class="input-style">
+                    <option>Book a Premium Relocation</option>
+                    <option>Corporate Contract Partnerships</option>
+                    <option>Art / Fine Antiques Crating</option>
+                    <option>Careers & HR Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-group-style">
+                  <label for="contact-message">Relocation Blueprint Details</label>
+                  <textarea id="contact-message" class="textarea-style" placeholder="List estimated move scale, key locations, or specialized heavy items requiring coordination..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-accent" style="width: 100%;">Transmit Message</button>
+              </form>
+            </div>
+
+            <div class="contact-info-panel reveal">
+              <div class="contact-card-item">
+                <div class="contact-card-icon">📍</div>
+                <div class="contact-card-text">
+                  <h4>Global Headquarters</h4>
+                  <p>500 Lexicon Heights Road, Suite 900</p>
+                  <p>Metropolis logistics Hub, NY 10012</p>
+                </div>
+              </div>
+
+              <div class="contact-card-item">
+                <div class="contact-card-icon">📞</div>
+                <div class="contact-card-text">
+                  <h4>Operations desk (24/7)</h4>
+                  <p>Direct Hotlines: +1 (800) 555-MOVE</p>
+                  <p>International: +1 (212) 555-0987</p>
+                </div>
+              </div>
+
+              <div class="contact-card-item">
+                <div class="contact-card-icon">✉️</div>
+                <div class="contact-card-text">
+                  <h4>Operations Emails</h4>
+                  <p>Inquiries: operations@nexusmove.com</p>
+                  <p>HR Division: careers@nexusmove.com</p>
+                </div>
+              </div>
+
+              <!-- Vector Styled Map Box -->
+              <div class="map-placeholder-box">
+                <svg class="map-placeholder-svg" viewBox="0 0 400 200">
+                  <rect width="400" height="200" fill="#0B1F3A" />
+                  <!-- Grid patterns -->
+                  <path d="M 0,20 L 400,20 M 0,60 L 400,60 M 0,100 L 400,100 M 0,140 L 400,140 M 0,180 L 400,180" stroke="rgba(37,99,235,0.08)" stroke-width="1"/>
+                  <path d="M 50,0 L 50,200 M 150,0 L 150,200 M 250,0 L 250,200 M 350,0 L 350,200" stroke="rgba(37,99,235,0.08)" stroke-width="1"/>
+                  <!-- Abstract map geometry -->
+                  <path d="M 120,40 L 190,140 L 240,60 L 320,160" fill="none" stroke="rgba(255,122,0,0.2)" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="190" cy="140" r="6" fill="#FF7A00" />
+                  <circle cx="190" cy="140" r="14" fill="none" stroke="#FF7A00" stroke-width="1.5" opacity="0.6"/>
+                </svg>
+                <div class="map-card-address">
+                  <span>Nexus HQ Hub (Interactive)</span>
+                  <a href="https://maps.google.com" target="_blank" style="color: var(--color-orange); font-weight:700;">Open Maps →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ==================== VIEW: SIGN IN ==================== -->
+    <div id="view-signin" class="page-view">
+      <section class="auth-section">
+        <div class="container auth-layout">
+          <div class="auth-card glass-card reveal">
+            <div class="section-header" style="margin-bottom: 2rem; text-align: center;">
+              <span class="section-tag">Secure Operations Gateway</span>
+              <h2 class="section-title" style="font-size: 2rem; margin: 0.5rem 0;">Sign In</h2>
+              <p class="section-desc" style="font-size: 0.95rem;">Access your elite logistics tracking dashboard and manage quotes.</p>
+            </div>
+            
+            <form id="signin-form" class="auth-form">
+              <div class="calc-form-group" style="margin-bottom: 1.5rem;">
+                <label for="signin-email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Executive Email</label>
+                <input type="email" id="signin-email" class="input-style" placeholder="executive@nexusmove.com" style="width: 100%;" required>
+              </div>
+              <div class="calc-form-group" style="margin-bottom: 2rem;">
+                <label for="signin-password" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Secure Password</label>
+                <input type="password" id="signin-password" class="input-style" placeholder="••••••••" style="width: 100%;" required>
+              </div>
+              <button type="submit" class="btn btn-accent auth-submit-btn" style="width: 100%;">
+                <span>Verify Credentials & Enter</span>
+              </button>
+            </form>
+            <div class="auth-redirect" style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
+              <p>New to NexusMove Operations? <a href="#/signup" class="auth-link" style="color: var(--color-orange); font-weight: 600;">Create an Elite Account →</a></p>
+              <div style="margin-top: 1rem; border-top: 1px solid var(--glass-border-dark); padding-top: 1rem;">
+                <p style="font-size: 0.8rem; color: var(--color-gray-dark);">
+                  Administrator Access: <a href="#" id="admin-autofill-link" style="color: var(--color-gold); font-weight: 600;">Autofill Admin Credentials</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: SIGN UP ==================== -->
+    <div id="view-signup" class="page-view">
+      <section class="auth-section">
+        <div class="container auth-layout">
+          <div class="auth-card glass-card reveal">
+            <div class="section-header" style="margin-bottom: 2rem; text-align: center;">
+              <span class="section-tag">Operational Registration</span>
+              <h2 class="section-title" style="font-size: 2rem; margin: 0.5rem 0;">Register Account</h2>
+              <p class="section-desc" style="font-size: 0.95rem;">Register to unlock high-tech telemetry tracking and pricing estimates.</p>
+            </div>
+            
+            <form id="signup-form" class="auth-form">
+              <div class="calc-form-group" style="margin-bottom: 1.5rem;">
+                <label for="signup-name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name</label>
+                <input type="text" id="signup-name" class="input-style" placeholder="Alexander Wright" style="width: 100%;" required>
+              </div>
+              <div class="calc-form-group" style="margin-bottom: 1.5rem;">
+                <label for="signup-email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Executive Email</label>
+                <input type="email" id="signup-email" class="input-style" placeholder="executive@nexusmove.com" style="width: 100%;" required>
+              </div>
+              <div class="calc-form-group" style="margin-bottom: 2rem;">
+                <label for="signup-password" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Secure Password (min 6 characters)</label>
+                <input type="password" id="signup-password" class="input-style" minlength="6" placeholder="••••••••" style="width: 100%;" required>
+              </div>
+              <button type="submit" class="btn btn-accent auth-submit-btn" style="width: 100%;">
+                <span>Initialize Account Registration</span>
+              </button>
+            </form>
+            <div class="auth-redirect" style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
+              <p>Already registered with NexusMove? <a href="#/signin" class="auth-link" style="color: var(--color-orange); font-weight: 600;">Sign In to Dashboard →</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW: ADMIN DASHBOARD ==================== -->
+    <div id="view-admin" class="page-view">
+      <section class="auth-section" style="padding-top: 6rem;">
+        <div class="container" style="max-width: 1200px;">
+          
+          <div class="section-header reveal" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span class="section-tag">System Operations Control</span>
+              <h2 class="section-title" style="font-size: 2.2rem; margin: 0.5rem 0;">Admin Control Center</h2>
+              <p class="section-desc" style="max-width: 600px;">Manage registered executive accounts, adjust profile details, and revoke portal access.</p>
+            </div>
+            <div>
+              <button class="btn btn-primary" id="admin-refresh-btn">
+                <span>Refresh Data</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="glass-card reveal" style="padding: 2.5rem; border-radius: var(--border-radius-lg); margin-bottom: 2rem;">
+            <div style="overflow-x: auto;">
+              <table class="admin-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                  <tr style="border-bottom: 2px solid var(--glass-border); color: var(--color-white); font-weight: 700; font-size: 0.95rem;">
+                    <th style="padding: 1rem 1.5rem;">Email Address</th>
+                    <th style="padding: 1rem 1.5rem;">Full Name</th>
+                    <th style="padding: 1rem 1.5rem;">Registered On</th>
+                    <th style="padding: 1rem 1.5rem;">Last Logged In</th>
+                    <th style="padding: 1rem 1.5rem; text-align: right;">Operations</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-users-list">
+                  <tr>
+                    <td colspan="5" style="text-align: center; padding: 3rem; color: var(--color-gray-dark);">
+                      Loading user directory telemetry...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- EDIT USER MODAL -->
+      <div id="admin-edit-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 16, 30, 0.85); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center;">
+        <div class="glass-card" style="width: 100%; max-width: 480px; padding: 3rem 2.5rem; border-radius: var(--border-radius-lg);">
+          <div style="margin-bottom: 2rem; text-align: center;">
+            <span class="section-tag">Profile Editor</span>
+            <h3 class="section-title" style="font-size: 1.5rem; margin-top: 0.25rem;">Edit Executive Data</h3>
+          </div>
+          <form id="admin-edit-form">
+            <input type="hidden" id="edit-user-id">
+            <div class="calc-form-group" style="margin-bottom: 1.5rem;">
+              <label for="edit-user-name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name</label>
+              <input type="text" id="edit-user-name" class="input-style" style="width: 100%;" required>
+            </div>
+            <div class="calc-form-group" style="margin-bottom: 2rem;">
+              <label for="edit-user-email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address</label>
+              <input type="email" id="edit-user-email" class="input-style" style="width: 100%;" required>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <button type="button" class="btn btn-secondary" id="admin-edit-cancel-btn" style="flex: 1;">Cancel</button>
+              <button type="submit" class="btn btn-accent" style="flex: 1;">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- GLOBAL MULTI-COLUMN FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#/" class="logo">
+          <div class="logo-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div class="logo-text">NEXUS<span>MOVE</span></div>
+        </a>
+        <p class="footer-desc">Architecting zero-downtime corporate moves and white-glove residential relocations backed by GPS telemetry systems.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="LinkedIn">LN</a>
+          <a href="#" class="social-icon" aria-label="Twitter">TW</a>
+          <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services Streams</h4>
+        <ul class="footer-links">
+          <li><a href="#/pricing?service=home-relocation">Residences Relocations</a></li>
+          <li><a href="#/pricing?service=office-relocation">Corporate Relocations</a></li>
+          <li><a href="#/pricing?service=international-moving">Global Relocations</a></li>
+          <li><a href="#/pricing?service=vehicle-transportation">Enclosed Auto Transport</a></li>
+          <li><a href="#/pricing?service=warehouse-storage">Climate Storage Vaults</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation Links</h4>
+        <ul class="footer-links">
+          <li><a href="#/about">About Company</a></li>
+          <li><a href="#/fleet">Interactive Fleet</a></li>
+          <li><a href="#/gallery">Completed Projects</a></li>
+          <li><a href="#/careers">Careers / HR</a></li>
+          <li><a href="#/contact">Office Locations</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Operations Insights</h4>
+        <p class="footer-desc" style="margin-top:0; font-size:0.85rem;">Subscribe to receive monthly logistics engineering whitepapers.</p>
+        <div class="newsletter-box">
+          <form class="newsletter-form">
+            <input type="email" placeholder="executive@email.com" required aria-label="Newsletter email">
+            <button type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 NexusMove Logistics Corp. All rights reserved. Operating with ISO 9001:2015 Certifications.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Security Protocol</a>
+        <a href="#">Non-Disclosure Terms</a>
+        <a href="#">Privacy policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DATA & SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

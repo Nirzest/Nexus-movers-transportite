@@ -1,0 +1,13 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore editor configs
+.vscode/
+
+# Ignore temp/debug screenshots
+*.png
+*.webp
+
+# Ignore node modules if any
+node_modules/
